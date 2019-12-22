@@ -13,9 +13,9 @@
       "url": "git+https://github.com/MuAkl/otpautofill.git"
     },
     "keywords": [
-      "Toast",
-      "Notification",
-      "Message",
+      "OTP",
+      "AutoFill",
+      "Authentication",
       "Alert",
       "ecosystem:cordova",
       "cordova-android"

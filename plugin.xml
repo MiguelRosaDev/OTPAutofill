@@ -8,7 +8,7 @@
     <license>MIT</license>
 
     <keywords>cordova,android,otp,autofill</keywords>
-    <repo>https://github.com/MuAkl/OTPAutofill/OTP-Autofill-Plugin.git</repo>
+    <repo>https://github.com/MuAkl/OTPAutofill.git</repo>
     <issue>https://github.com/MuAkl/OTPAutofill/issues</issue>
   
     <engines>
