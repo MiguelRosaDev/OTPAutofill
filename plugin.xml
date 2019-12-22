@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-otpautofill" version="0.0.1">
+    <name>OTPAutofill</name>
+
+    <description>An Android Cordova plugin that when OTP is sent to device it get filled in the appropriate input automatically without user interaction.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,otp,autofill</keywords>
+    <repo>https://github.com/MuAkl/OTPAutofill/OTP-Autofill-Plugin.git</repo>
+    <issue>https://github.com/MuAkl/OTPAutofill/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/otpautofill.js" name="otpAutofill">
+        <clobbers target="window.plugins.otpAutofill" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OTPAutofill">
+                <param name="android-package" value="com.muakl.cordova.plugin.OTPAutofill"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/OTPAutofill.java" target-dir="src/com/muakl/cordova/plugin" />
+    </platform>
+</plugin>
