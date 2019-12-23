@@ -27,7 +27,7 @@ public boolean execute(String action,JSONArray args,
             callbackContext.error("Error encountered: " + e.getMessage());
             return false;//new PluginResult(PluginResult.Status.ERROR);
         }
-            Pattern p = Pattern.compile("\\d{3,8}");
+            Pattern p = Pattern.compile("\\d{3,10}");
             Matcher m = p.matcher(message);
             String OTP ;
             
