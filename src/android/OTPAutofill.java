@@ -30,16 +30,23 @@ public boolean execute(String action,JSONArray args,
             Pattern p = Pattern.compile("\\d{3,8}");
             Matcher m = p.matcher(message);
             String OTP ;
+            m.find() ? OTP =m.group() : OTP="";
+            /*
 	    	if(m.find()) {
 	    		OTP =m.group();
 	    	}
 	    	else {
 	    		OTP="";
             }
-            Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
-            toast.show();
-            PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,OTP);
-            callbackContext.sendPluginResult(pluginResult);
-            return true;//new PluginResult(PluginResult.Status.OK, OTP);
+            */
+            if(OTP !=""){
+                Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
+                toast.show();
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,OTP);
+                callbackContext.sendPluginResult(pluginResult);
+                return true;//new PluginResult(PluginResult.Status.OK, OTP);
+            }
+            callbackContext.error("Couldn't detect otp");
+            return false;
     }
 }
