@@ -30,15 +30,13 @@ public boolean execute(String action,JSONArray args,
             Pattern p = Pattern.compile("\\d{3,8}");
             Matcher m = p.matcher(message);
             String OTP ;
-            m.find() ? OTP =m.group() : OTP="";
-            /*
 	    	if(m.find()) {
 	    		OTP =m.group();
 	    	}
 	    	else {
 	    		OTP="";
             }
-            */
+            
             if(OTP !=""){
                 Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
                 toast.show();
