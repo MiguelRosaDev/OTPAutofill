@@ -9,7 +9,7 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-public class OTPAutofill {
+public class OTPAutofill extends CordovaPlugin {
     
   //  @Override
 public boolean execute(String action,JSONArray args,
@@ -36,8 +36,8 @@ public boolean execute(String action,JSONArray args,
 	    	else {
 	    		OTP="";
             }
-           // Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
-           // toast.show();
+            Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
+            toast.show();
             PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,OTP);
             callbackContext.sendPluginResult(pluginResult);
             return true;//new PluginResult(PluginResult.Status.OK, OTP);
