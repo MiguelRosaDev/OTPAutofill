@@ -39,7 +39,7 @@ public boolean execute(String action,JSONArray args,
             if(OTP !=""){
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,OTP);
                 callbackContext.sendPluginResult(pluginResult);
-                return false;////////////////////////////////////////////////////////////////////////////////////////////////////////
+                return true;
             }
             callbackContext.error("Couldn't detect otp");
             return false;
