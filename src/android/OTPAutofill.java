@@ -9,7 +9,7 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-public class OTPAutofill {//extends CordovaPlugin {
+public class OTPAutofill extends CordovaPlugin {
     
   //  @Override
 public boolean execute(String action,JSONArray args,
@@ -17,7 +17,7 @@ public boolean execute(String action,JSONArray args,
         // Verify that the user sent a 'detect' action
         if(!action.equals("detect")){
             callbackContext.error("\"" + action + "\" is not a recognized action.");
-            return false;//new PluginResult(PluginResult.Status.INVALID_ACTION);
+            return false;
         }
         String message;
         try{
@@ -25,7 +25,7 @@ public boolean execute(String action,JSONArray args,
             message = options.getString("message");
         }  catch(JSONException e){
             callbackContext.error("Error encountered: " + e.getMessage());
-            return false;//new PluginResult(PluginResult.Status.ERROR);
+            return false;
         }
             Pattern p = Pattern.compile("\\d{3,8}");
             Matcher m = p.matcher(message);
@@ -43,7 +43,7 @@ public boolean execute(String action,JSONArray args,
                // toast.show();
                 PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
                 callbackContext.sendPluginResult(pluginResult,OTP);
-                return true;//new PluginResult(PluginResult.Status.OK, OTP);
+                return true;
             }
             callbackContext.error("Couldn't detect otp");
             return false;
