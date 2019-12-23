@@ -1,6 +1,6 @@
 package com.muakl.cordova.plugin;
 
-import android.widget.Toast;
+//import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.cordova.CallbackContext;
@@ -9,7 +9,7 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-public class OTPAutofill extends CordovaPlugin {
+public class OTPAutofill {//extends CordovaPlugin {
     
   //  @Override
 public boolean execute(String action,JSONArray args,
@@ -30,6 +30,7 @@ public boolean execute(String action,JSONArray args,
             Pattern p = Pattern.compile("\\d{3,8}");
             Matcher m = p.matcher(message);
             String OTP ;
+            
 	    	if(m.find()) {
 	    		OTP =m.group();
 	    	}
@@ -38,10 +39,10 @@ public boolean execute(String action,JSONArray args,
             }
             
             if(OTP !=""){
-                Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
-                toast.show();
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,OTP);
-                callbackContext.sendPluginResult(pluginResult);
+                //Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
+               // toast.show();
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+                callbackContext.sendPluginResult(pluginResult,OTP);
                 return true;//new PluginResult(PluginResult.Status.OK, OTP);
             }
             callbackContext.error("Couldn't detect otp");
