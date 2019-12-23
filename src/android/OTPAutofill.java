@@ -41,8 +41,8 @@ public boolean execute(String action,JSONArray args,
             if(OTP !=""){
                 Toast toast = Toast.makeText(cordova.getActivity(), OTP,Toast.LENGTH_LONG);
                 toast.show();
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-                callbackContext.sendPluginResult(pluginResult,OTP);
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,OTP);
+                callbackContext.sendPluginResult(pluginResult);
                 return true;//new PluginResult(PluginResult.Status.OK, OTP);
             }
             callbackContext.error("Couldn't detect otp");
